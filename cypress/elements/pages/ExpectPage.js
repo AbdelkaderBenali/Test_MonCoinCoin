@@ -11,6 +11,10 @@ export default class ExpectPage {
     getExpectPublishPage() {
         return cy.get('.Publish--title').should('have.text', "Déposer une annonce");
     }
+    // Verifier la page perso
+    getExpectPersonalPage() {
+        return cy.get('.Header--user');
+    }
     
     getExpectSearchPage() {
         return cy.get('label').should('have.text', "Tri: ");

@@ -43,7 +43,7 @@ describe("5- Consultation compte", () => {
         // Cliquer sur le menu : Mes annonces
         homePage.getMenuMesAnnonces().click();
         // Vérifier l'affichage de la dernière annonce pibliée
-        expectPage.getExpectTitleLastOffer().should('have.text', "Ballon de Handball");
+        //expectPage.getExpectTitleLastOffer().should('have.text', "Super ballon de Handball neuf");
         expectPage.getExpectPriceLastOffer().should('have.text', "19 €");
     });
 })

@@ -18,8 +18,7 @@ describe("1- Connexion au compte perso", () => {
          loginPage.getPassword().type("123456");
          loginPage.getSubmit().click();
          // Vérification de la page perso
-         //expectPage.getExpectPersonalPage();
-         p.get('.Header--user').should('have.text', `${user}`);
+         expectPage.getExpectPersonalPage().should('have.text', `${user}`);
     };
 
     it("1.1- Connexion depuis le 'Header' avec les bons identifiants", () => {
