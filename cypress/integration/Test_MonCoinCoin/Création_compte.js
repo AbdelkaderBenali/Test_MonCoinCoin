@@ -1,4 +1,4 @@
-describe("Création compte", () => {
+describe("2- Création compte", () => {
     const url = "https://affectionate-knuth-1ccbc3.netlify.app/";
     let userTmp = new Date();   
     let user = `${userTmp.getMonth()}${userTmp.getDay()}${userTmp.getHours()}${userTmp.getMinutes()}${userTmp.getSeconds()}${userTmp.getMilliseconds()}`;
@@ -16,7 +16,7 @@ describe("Création compte", () => {
         p.get('.SignIn--submit').click();
     }
 
-    it("Créer un compte depuis le 'Header'", () => {
+    it("2.1- Créer un compte depuis le 'Header'", () => {
         // Visiter le site
         cy.visit(url);
         // Cliquer sur le bouton connexion du "Header"
@@ -27,7 +27,7 @@ describe("Création compte", () => {
          cy.get('.Home--slogan').should('have.text', "<< Le coin des bonnes affaires ! >>")
     });
 
-   it("Créer un compte existant depuis le 'Home", () => {
+   it("2.2- Créer un compte existant depuis le 'Home", () => {
         // Visiter le site
         cy.visit(url);
         cy.get('.Home--signIn').click();

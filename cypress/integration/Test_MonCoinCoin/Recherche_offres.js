@@ -49,7 +49,7 @@ describe("4- Rechercher des offres", () => {
         
         // Consulter le premier résultat de recherche
         cy.get('.Offers--offer').eq(0).click();
-        expectPage.getExpectAnnoncePage();
+        expectPage.getExpectDisplayOffer();
         
         // Comment vérifier les résultats du tri : Test à finalser /!\        
     });
