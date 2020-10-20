@@ -1,13 +1,12 @@
 export default class MyAccountPage {
+    // Vérifier le panier de la page perso
     getButonCart() {
         return cy.get('.Cart--box');
     }
-    getMenuMesInfos() {
-        return cy.get(':nth-child(1) > a > span');
+
+    // Verifier le bouton du username de la page perso
+    getExpectPersonalPage() {
+        return cy.get('.Header--user');
     }
 
-    getMenuMesAnnonces() {
-        return cy.get(':nth-child(2) > a > span');
-    }
-
-}
+} 

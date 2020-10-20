@@ -1,24 +1,37 @@
 export default class SearchPage {
-    // Le champ : Que rechercher-vous
+
+    // Verifier la page Recherche
+    expectDetailOffertPage() {
+        return cy.get('.Pages--currentPage').should('contain', "Page ");
+    }
+
+    // Localiser le champ : Que rechercher-vous
     getKeyword() {
-        return cy.get('.Search--input').clear()
+        return cy.get('.Search--input');
     }
-     // Le champ : Prix min
+
+     // Localiser le champ : Prix min
     getPriceMin() {
-        return cy.get('.Search--priceMin').clear()
+        return cy.get('.Search--priceMin');
     }
-     // Le champ : Prix Max
+
+     // Localiser le champ : Prix Max
     getPriceMax() {
-        return cy.get('.Search--priceMax').clear()
+        return cy.get('.Search--priceMax');
     }
-     // Le menu déroulant : Tri
+
+     // Localiser le menu déroulant : Tri
     getSort() {
         return cy.get('#sort');
     }
-    getButonSubmitRechercher() {
+
+    // Localiser le bouton Rechercher
+    butonSubmitRechercher() {
         return cy.get('.Search--button');
     }
+
+    // Localiser le premier résultat affiché
     getFirstResult() {
-        return cy.get('.Offers--offer').eq(0);
+        return cy.get(':nth-child(1) > .Offers--offer');
     }
 }

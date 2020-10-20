@@ -1,36 +1,31 @@
 export default class HomePage {
     // Cliquer sur bouton "Se Connecter" du "Header"
-    getButonConnexionHeader () {
+    butonConnectionHeader () {
         return cy.get('.Header--signIn-button');
     }
 
     // Cliquer sur bouton Rechercher
-    getButonRechercher () {
+    butonRechercher () {
         return cy.get('.Header--search');
     }
 
     // Cliquer sur bouton "Déposer une annonce"
-    getButonDeposerAnnonce () {
+    butonDeposerAnnonce () {
         return cy.get('.Header--publish');
     }
 
     // Cliquer sur bouton "Se Connecter" du "Home"
-    getButonConnexionHome () {
+    butonConnectionHome () {
         return cy.get('.Home--signIn');
     }
 
     // Cliquer sur bouton "Consulter les offres" du "Home"
-    getButonSearchOffers() {
+    butonSearchOffers() {
         return cy.get('.Home--offers');
     }
 
-    // Cliquer sur menu : Mes annonces (page perso)
-    getMenuMesAnnonces() {
-        return cy.get(':nth-child(2) > a > span');
-    }
-
-    // Cliquer sur menu : Mes infos (page perso)
-    getMenuMesInfos() {
-        return cy.get(':nth-child(1) > a > span');
+    // Verifier la page d'accueil (Logo)
+    sloganHome() {
+        return cy.get('.Home--slogan').should('have.text', "<< Le coin des bonnes affaires ! >>")
     } 
 }
