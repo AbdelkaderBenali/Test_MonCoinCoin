@@ -1,4 +1,4 @@
-///<reference types="cypress-iframe" />
+////<reference types="cypress-iframe" />
 
 import HomePage from '../../elements/pages/HomePage';
 import SearchPage from '../../elements/pages/SearchPage';
@@ -75,7 +75,7 @@ describe("Achat d'article", () => {
         cy.get('.Cart--box').click();
         // vérifier la page Mon panier
         cy.wait(2000) // Sans cette attente, le test échoue !
-    // saisir les coordonnées banquaires
+        // saisir les coordonnées banquaires
         // Noméro de la carte : Saisir le numéro
         cy.get('.__PrivateStripeElement > iframe').then($iframe => {
             const $body = $iframe.contents().find('#root')
@@ -92,7 +92,7 @@ describe("Achat d'article", () => {
             .type('1222');
           });
 
-          // Code secret : Saisir le code
+        // Code secret : Saisir le code
           cy.get('.__PrivateStripeElement > iframe').then($iframe => {
         const $body = $iframe.contents().find('#root')
         cy.wrap($body)
@@ -112,8 +112,6 @@ describe("Achat d'article", () => {
         cy.get('.Pay--validate').click();
 
         // Vérifier l'ouverture de la Pop-Up confirmant le paiement
-        cy.get('.NotConnected--body').should('have.text', "Paiement validé");
-    
-    }) 
-   
-})
+        cy.get('.NotConnected--body').should('have.text', "Paiement validé");    
+    });   
+});
